@@ -5,9 +5,9 @@ from fastapi import Depends
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import SupabaseVectorStore
 from logger import get_logger
-
+import dotenv
 from supabase import Client, create_client
-
+dotenv.load_dotenv(verbose=True)
 logger = get_logger(__name__)
 
 openai_api_key = os.environ.get("OPENAI_API_KEY")
